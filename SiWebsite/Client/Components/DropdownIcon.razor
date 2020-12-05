@@ -1,0 +1,22 @@
+﻿
+
+<table style="width:100%">
+    <tr>
+        <td style="width:70px">
+            <img src="@Src" style="width: 40px; height:40px"/>
+        </td>
+        <td style="vertical-align:middle">
+            <div>
+                @Text
+            </div>
+        </td>
+    </tr>
+</table>
+
+@code {
+    [Parameter]
+    public string Src { get; set; }
+
+    [Parameter]
+    public string Text { get; set; }
+}

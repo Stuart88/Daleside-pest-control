@@ -1,0 +1,54 @@
+﻿@inject NavigationManager NavigationManager
+
+<Bar Breakpoint="Breakpoint.Desktop"
+     Background="Background.Light"
+     ThemeContrast="ThemeContrast.Light">
+    <BarBrand @onclick="NavigateHome" Class="hover-pointer">
+        <table>
+            <tr>
+                <td>
+                    <img class="nav-logo" src="/images/yorkshire-rose.png" />
+                </td>
+                <td style="color: var(--green);
+                                      font-weight: bold;">
+                    @SiWebsite.Data.Global.SiteName
+                </td>
+            </tr>
+        </table>
+    </BarBrand>
+    <BarToggler Mode="BarTogglerMode.Popout" />
+    <BarMenu>
+        <BarStart>
+            <BarItem>
+                <BarLink To="/">Home</BarLink>
+            </BarItem>
+            @*<BarItem>
+                    <BarLink To="/about">About</BarLink>
+                </BarItem>*@
+            <BarItem>
+                <BarDropdown>
+                    <BarDropdownToggle>Pests</BarDropdownToggle>
+                    <BarDropdownMenu>
+                        @foreach (string p in Data.Global.PestsList)
+                        {
+                            <BarDropdownItem>
+                                <BarLink To="@($"/pests/{p.ToLower()}")">
+                                    <SiWebsite.Client.Components.DropdownIcon Src="@($"/icons/{p.ToLower()}.svg")" Text="@p" />
+                                </BarLink>
+                            </BarDropdownItem>
+                        }
+                    </BarDropdownMenu>
+                </BarDropdown>
+            </BarItem>
+        </BarStart>
+    </BarMenu>
+</Bar>
+
+@code{
+
+    private void NavigateHome()
+    {
+        NavigationManager.NavigateTo("/");
+    }
+
+}

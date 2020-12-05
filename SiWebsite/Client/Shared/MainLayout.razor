@@ -1,0 +1,39 @@
+﻿@using SiWebsite.Data
+@inherits LayoutComponentBase
+
+<Layout>
+    <LayoutHeader Fixed="true" Style="width:100%">
+        <NavMenu/>  
+    </LayoutHeader>
+    <LayoutContent Style="padding-top: 62px">
+
+        @Body
+
+        <div class="row">
+            <div class="col-12 text-center">
+
+                <img class="img-fluid" style="height:150px" src="/images/yorkshire-rose.png" />
+
+                <br />
+                <br />
+
+                <h3>For a quotation please call:</h3>
+
+                <h4>
+                    <a class="inline-link" href="tel:@Global.ContactNum">@Global.ContactNum</a>
+                </h4>
+
+                <br />
+                <br />
+                <br />
+                <br />
+            </div>
+        </div>
+    </LayoutContent>
+    <LayoutFooter>
+        <div class="footer-div">
+            &copy; @Global.SiteName @DateTime.Now.Year
+        </div>
+    </LayoutFooter>
+</Layout>
+

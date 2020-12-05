@@ -1,0 +1,30 @@
+﻿@using SiWebsite.Data
+
+
+<div class="row hide-on-mobile" style="max-width:1200px;margin:auto">
+    @foreach (string pest in Global.PestsList)
+    {
+        <div class="col text-center pests-component">
+            <NavLink href="@("pests/" + pest.ToLower())" @onclick="@(() => 
+                                                                   { 
+                                                                       Global.SetSelectedPestItem(pest);
+                                                                   })">
+
+                <div class="pests-component-background @(pest == Global.selectedPestItem ? "selected" : null)">
+                    <img class="img-fluid" src="@($"/icons/{pest.ToLower()}.svg")" />
+                </div>
+                <h4 style="color:white!important">@pest</h4>
+
+            </NavLink>
+        </div>
+    }
+</div>
+<div style="max-width: 1200px;
+    margin: 20px auto;
+    font-weight: bold;
+    text-align: left;">
+    Call today:  <a class="inline-link" href="tel:@Global.ContactNum">@Global.ContactNum</a>
+</div>
+<hr />
+<br />
+<br />

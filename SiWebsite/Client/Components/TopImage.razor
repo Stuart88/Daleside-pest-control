@@ -1,0 +1,31 @@
+﻿@using SiWebsite.Data
+
+@{
+    int backGroundCount = 4;
+    string topImageHeight = $"calc(90vh - {Global.HeaderHeight}px - {Global.FooterHeight}px); ";
+}
+
+
+<div style=@($"width: 100vw;")>
+
+    @for (int i = 1; i <= backGroundCount; i++)
+    {
+        <div id=@($"Background{i}")
+             style=@(   $"height: {topImageHeight}" +
+                        $"background-image: url(\"/images/yorkshire-background-{i}.jpg\");" +
+                        $"opacity: {(i == 1 ? 1 : 0)};")
+             class="home-top-section">
+
+            <div class="home-top-title-area">
+
+                @*<h1 class="title-line-one">@Global.SiteName</h1>*@
+                <div class="title-line-two">@Global.Slogan</div>
+                <div class="title-line-three">Call today on <a class="inline-link" href="tel:@Global.ContactNum">@Global.ContactNum</a></div>
+
+            </div>
+        </div>
+    }
+
+</div>
+
+<div id="top-image-base" style=@($"margin-top:{topImageHeight}")></div>

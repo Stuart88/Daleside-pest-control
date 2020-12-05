@@ -1,0 +1,163 @@
+﻿
+.home-top-section {
+    background-position: bottom;
+    background-origin: content-box;
+    background-size: cover;
+    image-rendering: optimizespeed;
+    position: absolute;
+    top: 62px;
+    width: 100%;
+    background-size: cover;
+}
+
+#Background1 {
+    animation: background1 32s infinite ease-in-out;
+}
+
+#Background2 {
+    animation: background2 32s infinite ease-in-out;
+}
+
+#Background3 {
+    animation: background3 32s infinite ease-in-out;
+}
+
+#Background4 {
+    animation: background4 32s infinite ease-in-out;
+}
+
+
+
+.home-top-title-area {
+    position: relative;
+    padding: 15px;
+    box-shadow: 4px 4px var(--lightblue);
+    display: inline-block;
+    left: 10%;
+    top: 10%;
+    background-color: rgba(126, 126, 126, 0.2);
+    color: white;
+    font-size: 45px;
+    border-bottom: 5px solid white;
+}
+
+.title-line-one {
+    font-size: 100%;
+}
+
+.title-line-two {
+    font-size: 100%;
+}
+.title-line-three {
+    font-size: 80%;
+}
+
+.home-slogan-area {
+    color: #444;
+}
+
+    .home-slogan-area .slogan-text {
+        font-size: 30px;
+        padding-bottom: 10px;
+    }
+
+#home-site-intro-section-container {
+    color: #444;
+    background-color: white;
+    padding: 2%;
+}
+
+    #home-site-intro-section-container button {
+        width: 40%;
+        min-width: 135px;
+    }
+
+.home-site-intro-section {
+    text-align: center;
+}
+
+    .home-site-intro-section img {
+        width: 50%;
+    }
+
+
+@media (max-width: 767px) {
+    #home-top-title-area {
+        margin: auto;
+        position: initial;
+        padding: 10px;
+        box-shadow: none;
+        left: 0;
+        top: 0;
+        max-width: 100vw;
+    }
+    .home-top-section {
+        top: 59px;
+    }
+}
+
+
+/*Animations*/
+
+@keyframes background1 {
+    0% {
+        opacity: 1
+    }
+
+    25% {
+        opacity: 0
+    }
+
+    75% {
+        opacity: 0
+    }
+
+    100% {
+        opacity: 1
+    }
+}
+
+@keyframes background2 {
+    0% {
+        opacity: 0
+    }
+
+    25% {
+        opacity: 1
+    }
+
+    50% {
+        opacity: 0
+    }
+}
+
+@keyframes background3 {
+
+    25% {
+        opacity: 0
+    }
+
+    50% {
+        opacity: 1
+    }
+
+    75% {
+        opacity: 0
+    }
+}
+
+@keyframes background4 {
+
+    50% {
+        opacity: 0
+    }
+
+    75% {
+        opacity: 1
+    }
+
+    100% {
+        opacity: 0
+    }
+}
+
