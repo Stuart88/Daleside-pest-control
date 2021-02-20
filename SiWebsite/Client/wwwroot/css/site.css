@@ -52,6 +52,12 @@ app {
     /*flex-direction: column;*/
 }
 
+.toggler-line {
+    border: solid 1px grey;
+    margin: 5px auto;
+    width: 20px;
+}
+
 .top-row {
     height: 3.5rem;
     display: flex;
