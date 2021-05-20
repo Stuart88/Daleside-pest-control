@@ -1,0 +1,15 @@
+﻿
+
+
+<div class="captioned-img-container">
+    <img class="img-fluid captioned-img" src="api/Images/GetImage/@ImageFile" />
+    <div class="captioned-img-caption">@Caption</div>
+</div>
+
+@code{
+    [Parameter]
+    public string Caption { get; set; }
+
+    [Parameter]
+    public string ImageFile { get; set; }
+}

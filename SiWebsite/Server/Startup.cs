@@ -52,7 +52,8 @@ namespace SiWebsite.Server
             {
                 endpoints.MapRazorPages();
                 endpoints.MapControllers();
-                endpoints.MapFallbackToFile("index.html");
+                //endpoints.Map("api/{**slug}", HandleApiFallback);
+                endpoints.MapFallbackToFile("{**slug}", "index.html");
             });
         }
     }

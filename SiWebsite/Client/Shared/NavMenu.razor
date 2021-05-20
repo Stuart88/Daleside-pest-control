@@ -1,4 +1,5 @@
-﻿@inject NavigationManager NavigationManager
+﻿@using SiWebsite.Data
+@inject NavigationManager NavigationManager
 
 <Bar Breakpoint="Breakpoint.Desktop"
      Background="Background.Light"
@@ -18,7 +19,7 @@
     </BarBrand>
     <BarToggler Mode="BarTogglerMode.Popout" Attributes="@(new Dictionary<string, object>(){ { "collapsed", "hide" } })">
     </BarToggler>
-    <BarMenu  Attributes="@(new Dictionary<string, object>(){ { "data-collapse", "hide" } })">
+    <BarMenu Attributes="@(new Dictionary<string, object>(){ { "data-collapse", "hide" } })">
         <BarStart>
             <BarItem>
                 <BarLink To="/">Home</BarLink>
@@ -33,7 +34,10 @@
                         @foreach (string p in Data.Global.PestsList)
                         {
                             <BarDropdownItem>
-                                <BarLink To="@($"/pests/{p.ToLower()}")">
+                                <BarLink To="@($"/pests/{p.ToLower()}")" @onclick="@(() =>
+                                                                   {
+                                                                       Global.SetSelectedPestItem(p);
+                                                                   })">
                                     <SiWebsite.Client.Components.DropdownIcon Src="@($"/icons/{p.ToLower()}.svg")" Text="@p" />
                                 </BarLink>
                             </BarDropdownItem>
