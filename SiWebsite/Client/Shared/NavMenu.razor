@@ -3,7 +3,8 @@
 
 <Bar Breakpoint="Breakpoint.Desktop"
      Background="Background.Light"
-     ThemeContrast="ThemeContrast.Light">
+     ThemeContrast="ThemeContrast.Light"
+     Visible="@_menuVisible">
     <BarBrand @onclick="NavigateHome" Class="hover-pointer">
         <table>
             <tr>
@@ -17,9 +18,9 @@
             </tr>
         </table>
     </BarBrand>
-    <BarToggler Mode="BarTogglerMode.Popout" Attributes="@(new Dictionary<string, object>(){ { "collapsed", "hide" } })">
+    <BarToggler Mode="BarTogglerMode.Popout" @onclick="ToggleMenu">
     </BarToggler>
-    <BarMenu Attributes="@(new Dictionary<string, object>(){ { "data-collapse", "hide" } })">
+    <BarMenu>
         <BarStart>
             <BarItem>
                 <BarLink To="/">Home</BarLink>
@@ -37,6 +38,7 @@
                                 <BarLink To="@($"/pests/{p.ToLower()}")" @onclick="@(() =>
                                                                    {
                                                                        Global.SetSelectedPestItem(p);
+                                                                       _menuVisible = false;
                                                                    })">
                                     <SiWebsite.Client.Components.DropdownIcon Src="@($"/icons/{p.ToLower()}.svg")" Text="@p" />
                                 </BarLink>
@@ -51,9 +53,15 @@
 
 @code{
 
+    bool _menuVisible = false;
+
     private void NavigateHome()
     {
         NavigationManager.NavigateTo("/");
     }
 
+    private void ToggleMenu()
+    {
+        _menuVisible = !_menuVisible;
+    }
 }

@@ -1,14 +1,26 @@
 ﻿@using SiWebsite.Data
 
 
+@*@if (ShowHomeLink)
+{
+    <div class="text-center">
+        <NavLink href="/">
+            <h5 class="pests-component-home-link hover-pointer">Home</h5>
+        </NavLink>
+    </div>
+}*@
+
 <div class="row" style="max-width:1200px;margin:auto">
+
+
+
     @foreach (string pest in Global.PestsList)
     {
         <div class="col text-center pests-component">
-            <NavLink href="@("pests/" + pest.ToLower())" @onclick="@(() => 
-                                                                   { 
-                                                                       Global.SetSelectedPestItem(pest);
-                                                                   })">
+            <NavLink href="@("pests/" + pest.ToLower())" @onclick="@(() =>
+                                                                     {
+                                                                         Global.SetSelectedPestItem(pest);
+                                                                     })">
 
                 <div class="pests-component-background @(pest == Global.selectedPestItem ? "selected" : null)">
                     <img class="img-fluid" src="@($"/icons/{pest.ToLower()}.svg")" />
@@ -19,7 +31,12 @@
         </div>
     }
 </div>
-<CallToday/>
+<CallToday />
 <hr />
 <br />
 <br />
+
+@code{
+    [Parameter]
+    public bool ShowHomeLink { get; set; } = true;
+}

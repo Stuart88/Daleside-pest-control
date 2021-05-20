@@ -141,7 +141,11 @@ hr{
     background-color: var(--lightgreen_);
     transform: scale(1.0);
 }
-
+.pests-component-home-link{
+    color:white!important;
+    text-decoration:underline;
+    margin-bottom: 15px;
+}
 .hover-pointer:hover {
     cursor: pointer;
 }
