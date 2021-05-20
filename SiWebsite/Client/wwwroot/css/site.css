@@ -124,8 +124,6 @@ hr{
 }
     .pests-component .pests-component-background {
         background-color: white;
-        width: 144px;
-        height: 144px;
         border-radius: 80px;
         display: table-cell;
         vertical-align: middle;
@@ -280,6 +278,12 @@ footer{
 
     .home-para-logo {
         width: 35%;
+    }
+}
+
+@media (max-width: 470px){
+    .pests-component-title {
+        font-size: 20px;
     }
 }
 

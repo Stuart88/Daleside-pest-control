@@ -1,7 +1,7 @@
 ﻿@using SiWebsite.Data
 
 
-<div class="row hide-on-mobile" style="max-width:1200px;margin:auto">
+<div class="row" style="max-width:1200px;margin:auto">
     @foreach (string pest in Global.PestsList)
     {
         <div class="col text-center pests-component">
@@ -13,7 +13,7 @@
                 <div class="pests-component-background @(pest == Global.selectedPestItem ? "selected" : null)">
                     <img class="img-fluid" src="@($"/icons/{pest.ToLower()}.svg")" />
                 </div>
-                <h4 style="color:white!important">@pest</h4>
+                <h4 class="pests-component-title" style="color:white!important">@pest</h4>
 
             </NavLink>
         </div>
