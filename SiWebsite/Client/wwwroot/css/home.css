@@ -8,6 +8,7 @@
     top: 62px;
     width: 100%;
     background-size: cover;
+    border-bottom: 3px solid var(--lightgreen_);
 }
 
 #Background1 {
@@ -100,8 +101,16 @@
         color: white;
         font-size: 24px;
         border-bottom: 5px solid white;
-        margin: 61px auto 0;
-        width: 320px;
+    }
+}
+
+@media (max-width: 928px) {
+
+    .home-top-title-area {
+        margin: auto;
+        width: 100%;
+        top: 10%;
+        left: 0;
     }
 }
 
