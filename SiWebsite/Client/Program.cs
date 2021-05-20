@@ -36,10 +36,6 @@ namespace SiWebsite.Client
 
             var host = builder.Build();
 
-            host.Services
-              .UseBootstrapProviders()
-              .UseFontAwesomeIcons();
-
             await builder.Build().RunAsync();
         }
     }

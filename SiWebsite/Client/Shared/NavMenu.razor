@@ -17,11 +17,8 @@
         </table>
     </BarBrand>
     <BarToggler Mode="BarTogglerMode.Popout" Attributes="@(new Dictionary<string, object>(){ { "collapsed", "hide" } })">
-        <div class="toggler-line"></div>
-        <div class="toggler-line"></div>
-        <div class="toggler-line"></div>
     </BarToggler>
-    <BarMenu>
+    <BarMenu  Attributes="@(new Dictionary<string, object>(){ { "data-collapse", "hide" } })">
         <BarStart>
             <BarItem>
                 <BarLink To="/">Home</BarLink>
