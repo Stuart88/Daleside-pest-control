@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using Blazorise;
 using Blazorise.Bootstrap;
 using Blazorise.Icons.FontAwesome;
+using Blazor.Analytics;
 
 namespace SiWebsite.Client
 {
@@ -29,6 +30,7 @@ namespace SiWebsite.Client
                 })
                 .AddBootstrapProviders()
                 .AddFontAwesomeIcons()
+                .AddGoogleAnalytics("G-F3MW3ZZ6XP")
                 .AddSingleton(new HttpClient
                 {
                     BaseAddress = new Uri(builder.HostEnvironment.BaseAddress)

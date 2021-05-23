@@ -5,6 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Blazor-Analytics" Version="3.6.0" />
     <PackageReference Include="Blazorise.Bootstrap" Version="0.9.3.6" />
     <PackageReference Include="Blazorise.Components" Version="0.9.3.6" />
     <PackageReference Include="Blazorise.Icons.FontAwesome" Version="0.9.3.6" />
