@@ -5,6 +5,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Include="wwwroot\scripts\scripts.js" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Blazor-Analytics" Version="3.6.0" />
     <PackageReference Include="Blazorise.Bootstrap" Version="0.9.3.6" />
     <PackageReference Include="Blazorise.Components" Version="0.9.3.6" />

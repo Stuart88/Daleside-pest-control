@@ -1,4 +1,5 @@
 ﻿
+@inherits PageBase
 
 @*@if (ShowHomeLink)
 {
@@ -11,24 +12,52 @@
 
 <div class="row" style="max-width:1200px;margin:auto">
 
-
-
-    @foreach (string pest in Global.PestsList)
+    @if (this.IsMobile)
     {
-        <div class="col text-center pests-component">
-            <NavLink href="@("pests/" + pest.ToLower())" @onclick="@(() =>
+        for (int i = 0; i * 3 < Global.PestsList.Count(); i++)
+        {
+            <div class="row" style="margin:auto">
+                @foreach (string pest in Global.PestsList.Skip(i * 3).Take(3))
+                {
+                    <div class="col text-center pests-component">
+                        <NavLink href="@("pests/" + pest.ToLower())" @onclick="@(() =>
+                                                                             {
+                                                                                 Global.SetSelectedPestItem(pest);
+                                                                             })">
+
+                            <div class="pests-component-background @(pest == Global.selectedPestItem ? "selected" : null)">
+                                <img class="img-fluid" src="@($"/icons/{pest.ToLower()}.svg")" />
+                            </div>
+                            <h4 class="pests-component-title" style="color:white!important">@pest</h4>
+
+                        </NavLink>
+                    </div>
+                }
+            </div>
+        }
+
+
+    }
+    else
+    {
+        @foreach (string pest in Global.PestsList)
+        {
+            <div class="col text-center pests-component">
+                <NavLink href="@("pests/" + pest.ToLower())" @onclick="@(() =>
                                                                      {
                                                                          Global.SetSelectedPestItem(pest);
                                                                      })">
 
-                <div class="pests-component-background @(pest == Global.selectedPestItem ? "selected" : null)">
-                    <img class="img-fluid" src="@($"/icons/{pest.ToLower()}.svg")" />
-                </div>
-                <h4 class="pests-component-title" style="color:white!important">@pest</h4>
+                    <div class="pests-component-background @(pest == Global.selectedPestItem ? "selected" : null)">
+                        <img class="img-fluid" src="@($"/icons/{pest.ToLower()}.svg")" />
+                    </div>
+                    <h4 class="pests-component-title" style="color:white!important">@pest</h4>
 
-            </NavLink>
-        </div>
+                </NavLink>
+            </div>
+        }
     }
+
 </div>
 <CallToday />
 <hr />
@@ -38,4 +67,6 @@
 @code{
     [Parameter]
     public bool ShowHomeLink { get; set; } = true;
+
+   
 }
