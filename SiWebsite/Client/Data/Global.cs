@@ -15,6 +15,7 @@ namespace SiWebsite.Data
         {
             "Rabbits", 
             "Rats", 
+            "Mice",
             "Moles", 
             "Squirrels", 
             //"Pigeons", 
